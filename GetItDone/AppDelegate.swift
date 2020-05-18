@@ -14,12 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         print("You are in did finish launching")
         let welcomeScreen = WelcomeController()
         window = UIWindow(frame: UIScreen.main.bounds)
+//        print(window?.frame) // Check device dimensions
         window?.makeKeyAndVisible()
         window?.rootViewController = welcomeScreen
         return true
