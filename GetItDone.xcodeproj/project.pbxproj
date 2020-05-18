@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		090A04062472BB6000BB0954 /* TDGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090A04052472BB6000BB0954 /* TDGradient.swift */; };
+		090A04082472BE7F00BB0954 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090A04072472BE7F00BB0954 /* UIColorExt.swift */; };
 		094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1DC221F04E10026EFAE /* AppDelegate.swift */; };
 		094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1DE221F04E10026EFAE /* WelcomeController.swift */; };
 		094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1E3221F04E10026EFAE /* GetItDone.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		090A04052472BB6000BB0954 /* TDGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDGradient.swift; sourceTree = "<group>"; };
+		090A04072472BE7F00BB0954 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		094FE1D9221F04E10026EFAE /* GetItDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetItDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094FE1DC221F04E10026EFAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094FE1DE221F04E10026EFAE /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
 				094FE1DE221F04E10026EFAE /* WelcomeController.swift */,
 				090A04052472BB6000BB0954 /* TDGradient.swift */,
+				090A04072472BE7F00BB0954 /* UIColorExt.swift */,
 				094FE1E6221F04E20026EFAE /* Assets.xcassets */,
 				094FE1E8221F04E20026EFAE /* LaunchScreen.storyboard */,
 				094FE1EB221F04E20026EFAE /* Info.plist */,
@@ -140,6 +143,7 @@
 				094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */,
 				090A04062472BB6000BB0954 /* TDGradient.swift in Sources */,
 				094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */,
+				090A04082472BE7F00BB0954 /* UIColorExt.swift in Sources */,
 				094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,13 +10,18 @@ import UIKit
 
 class TDGradient: UIView {
     
+    let colors : [CGColor] = [
+        UIColor(red: 100, green: 228, blue: 255).cgColor,
+        UIColor(red: 58, green: 123, blue: 213).cgColor
+    ]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
         if let layer = self.layer as? CAGradientLayer {
-            layer.colors = [UIColor.blue.cgColor, UIColor.gray.cgColor]
+            layer.colors = colors
             layer.locations = [0.0, 1.2]
         }
         
