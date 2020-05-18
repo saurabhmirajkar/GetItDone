@@ -10,14 +10,14 @@ import UIKit
 
 class TDGradient: UIView {
     
-    let colors : [CGColor] = [
-        UIColor(red: 100, green: 228, blue: 255).cgColor,
-        UIColor(red: 58, green: 123, blue: 213).cgColor
-    ]
+//    let colors : [CGColor] = [
+//        UIColor(red: 100, green: 228, blue: 255).cgColor,
+//        UIColor(red: 58, green: 123, blue: 213).cgColor
+//    ]
     
     let hexColors : [CGColor] = [
-        UIColor(rgb: 0x64E4FF).cgColor,  // #64E4FF
-        UIColor(rgb: 0x3A7BD5).cgColor   // #3A7BD5
+        UIColor.blueZero.cgColor,  // #64E4FF
+        UIColor.blueOne.cgColor   // #3A7BD5
     ]
     
     override init(frame: CGRect) {
