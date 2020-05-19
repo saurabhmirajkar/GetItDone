@@ -34,6 +34,8 @@ class WelcomeController: UIViewController {
         print("you are in view did load")
         view.backgroundColor = .white
         
+        nextButton.addTarget(self, action: #selector(handleNext), for: [.touchUpInside, .touchUpOutside])
+        
         view.addSubview(copyrightLabel)
         copyrightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         copyrightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
@@ -66,5 +68,15 @@ class WelcomeController: UIViewController {
         
     }
 
+    @objc func handleNext() {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.nextButton.transform = CGAffineTransform(scaleX: 0.93, y: 0.93)
+        }) { (_) in
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                self.nextButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            })
+        }
+    }
+    
 }
 
