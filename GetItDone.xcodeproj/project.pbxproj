@@ -13,6 +13,7 @@
 		094710D4247404420014FC73 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 094710D3247404420014FC73 /* Raleway-Regular.ttf */; };
 		094710D62474062F0014FC73 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 094710D52474062F0014FC73 /* Raleway-SemiBold.ttf */; };
 		094710D8247424DB0014FC73 /* TDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094710D7247424DB0014FC73 /* TDButton.swift */; };
+		094710DA24742EAF0014FC73 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094710D924742EAF0014FC73 /* ListController.swift */; };
 		094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1DC221F04E10026EFAE /* AppDelegate.swift */; };
 		094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1DE221F04E10026EFAE /* WelcomeController.swift */; };
 		094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1E3221F04E10026EFAE /* GetItDone.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		094710D3247404420014FC73 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		094710D52474062F0014FC73 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		094710D7247424DB0014FC73 /* TDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDButton.swift; sourceTree = "<group>"; };
+		094710D924742EAF0014FC73 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		094FE1D9221F04E10026EFAE /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094FE1DC221F04E10026EFAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094FE1DE221F04E10026EFAE /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				094710CE2473FD0B0014FC73 /* custom */,
 				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
 				094FE1DE221F04E10026EFAE /* WelcomeController.swift */,
+				094710D924742EAF0014FC73 /* ListController.swift */,
 				094FE1E6221F04E20026EFAE /* Assets.xcassets */,
 				094FE1E8221F04E20026EFAE /* LaunchScreen.storyboard */,
 				094FE1EB221F04E20026EFAE /* Info.plist */,
@@ -185,6 +188,7 @@
 				090A04082472BE7F00BB0954 /* UIColorExt.swift in Sources */,
 				094710D12473FD3F0014FC73 /* TDLabel.swift in Sources */,
 				094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */,
+				094710DA24742EAF0014FC73 /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

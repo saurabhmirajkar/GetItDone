@@ -74,7 +74,11 @@ class WelcomeController: UIViewController {
         }) { (_) in
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
                 self.nextButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            })
+            }) { (_) in
+                let listVC = ListController()
+                listVC.modalPresentationStyle = .fullScreen
+                self.present(listVC, animated: true, completion: nil)
+            }
         }
     }
     
