@@ -16,9 +16,11 @@ class WelcomeController: UIViewController {
         return view
     }()
     
+    let titleLabel = TDLabel(title: "GET IT DONE", size: 24, textAlign: .center)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         print("you are in view did load")
         view.backgroundColor = .white
                 
@@ -27,6 +29,12 @@ class WelcomeController: UIViewController {
         bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         bg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        
+        bg.addSubview(titleLabel)
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: bg.topAnchor, constant: 60).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        titleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
     }
 
