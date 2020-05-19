@@ -24,17 +24,25 @@ class WelcomeController: UIViewController {
         return label
     }()
     
+    let copyrightLabel = TDLabel(title: "© 2020 | Saurabh Mirajkar", color: .grayZero, size: 14, textAlign: .center)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("you are in view did load")
         view.backgroundColor = .white
+        
+        view.addSubview(copyrightLabel)
+        copyrightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        copyrightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        copyrightLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        copyrightLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
                 
         view.addSubview(bg)
         bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         bg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        bg.bottomAnchor.constraint(equalTo: copyrightLabel.topAnchor, constant: -70).isActive = true
         
         bg.addSubview(titleLabel)
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
