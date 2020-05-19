@@ -23,7 +23,7 @@ class TDLabel: UILabel {
         
         self.text = title
         self.textColor = color
-        self.font = UIFont.systemFont(ofSize: size)
+        self.font = UIFont(name: "Raleway-Regular", size: size)
         self.textAlignment = textAlign
     }
     
