@@ -12,7 +12,7 @@ class WelcomeController: UIViewController {
 
     let bg: UIView = {
        let view = TDGradient()
-        view.layer.cornerRadius = 6
+        view.layer.cornerRadius = 24
         return view
     }()
     
@@ -24,7 +24,9 @@ class WelcomeController: UIViewController {
         return label
     }()
     
-    let copyrightLabel = TDLabel(title: "© 2020 | Saurabh Mirajkar", color: .grayZero, size: 14, textAlign: .center)
+    let nextButton = TDButton(title: "START WINNING")
+    
+    let copyrightLabel = TDLabel(title: "© 2020 | Saurabh Mirajkar", color: .grayOne, size: 14, textAlign: .center)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +54,15 @@ class WelcomeController: UIViewController {
         
         bg.addSubview(infoLabel)
         infoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        infoLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        infoLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        infoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        infoLabel.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: 16).isActive = true
+        infoLabel.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: -16).isActive = true
+        
+        bg.addSubview(nextButton)
+        nextButton.centerXAnchor.constraint(equalTo: bg.centerXAnchor).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: bg.bottomAnchor, constant: -60).isActive = true
+        nextButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
     }
 
