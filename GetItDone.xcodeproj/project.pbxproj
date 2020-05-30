@@ -19,6 +19,10 @@
 		094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094FE1E3221F04E10026EFAE /* GetItDone.xcdatamodeld */; };
 		094FE1E7221F04E20026EFAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094FE1E6221F04E20026EFAE /* Assets.xcassets */; };
 		094FE1EA221F04E20026EFAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094FE1E8221F04E20026EFAE /* LaunchScreen.storyboard */; };
+		095339842476D275000C7129 /* TDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095339832476D275000C7129 /* TDHeaderView.swift */; };
+		095339872476DAA5000C7129 /* OptionSetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095339862476DAA5000C7129 /* OptionSetExt.swift */; };
+		095339892476E759000C7129 /* ProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095339882476E759000C7129 /* ProtocolExt.swift */; };
+		09613FEA2482A0E700DC56E6 /* NewItemPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09613FE92482A0E700DC56E6 /* NewItemPopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		094FE1E6221F04E20026EFAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094FE1E9221F04E20026EFAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		094FE1EB221F04E20026EFAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		095339832476D275000C7129 /* TDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDHeaderView.swift; sourceTree = "<group>"; };
+		095339862476DAA5000C7129 /* OptionSetExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSetExt.swift; sourceTree = "<group>"; };
+		095339882476E759000C7129 /* ProtocolExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolExt.swift; sourceTree = "<group>"; };
+		09613FE92482A0E700DC56E6 /* NewItemPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,8 @@
 				090A04052472BB6000BB0954 /* TDGradient.swift */,
 				094710D02473FD3F0014FC73 /* TDLabel.swift */,
 				094710D7247424DB0014FC73 /* TDButton.swift */,
+				095339832476D275000C7129 /* TDHeaderView.swift */,
+				09613FE92482A0E700DC56E6 /* NewItemPopUp.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -63,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				090A04072472BE7F00BB0954 /* UIColorExt.swift */,
+				095339862476DAA5000C7129 /* OptionSetExt.swift */,
+				095339882476E759000C7129 /* ProtocolExt.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -95,18 +107,26 @@
 		094FE1DB221F04E10026EFAE /* GetItDone */ = {
 			isa = PBXGroup;
 			children = (
+				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
 				094710D2247404200014FC73 /* fonts */,
 				094710CF2473FD230014FC73 /* extension */,
 				094710CE2473FD0B0014FC73 /* custom */,
-				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
-				094FE1DE221F04E10026EFAE /* WelcomeController.swift */,
-				094710D924742EAF0014FC73 /* ListController.swift */,
+				095339852476D4C3000C7129 /* controllers */,
 				094FE1E6221F04E20026EFAE /* Assets.xcassets */,
 				094FE1E8221F04E20026EFAE /* LaunchScreen.storyboard */,
 				094FE1EB221F04E20026EFAE /* Info.plist */,
 				094FE1E3221F04E10026EFAE /* GetItDone.xcdatamodeld */,
 			);
 			path = GetItDone;
+			sourceTree = "<group>";
+		};
+		095339852476D4C3000C7129 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				094FE1DE221F04E10026EFAE /* WelcomeController.swift */,
+				094710D924742EAF0014FC73 /* ListController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +161,7 @@
 				TargetAttributes = {
 					094FE1D8221F04E10026EFAE = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -183,12 +204,16 @@
 			files = (
 				094710D8247424DB0014FC73 /* TDButton.swift in Sources */,
 				094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */,
+				09613FEA2482A0E700DC56E6 /* NewItemPopUp.swift in Sources */,
 				090A04062472BB6000BB0954 /* TDGradient.swift in Sources */,
 				094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */,
+				095339842476D275000C7129 /* TDHeaderView.swift in Sources */,
+				095339892476E759000C7129 /* ProtocolExt.swift in Sources */,
 				090A04082472BE7F00BB0954 /* UIColorExt.swift in Sources */,
 				094710D12473FD3F0014FC73 /* TDLabel.swift in Sources */,
 				094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */,
 				094710DA24742EAF0014FC73 /* ListController.swift in Sources */,
+				095339872476DAA5000C7129 /* OptionSetExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saurabhmirajkar.GetItDone;
 				PRODUCT_NAME = ToDoList;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -353,7 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saurabhmirajkar.GetItDone;
 				PRODUCT_NAME = ToDoList;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

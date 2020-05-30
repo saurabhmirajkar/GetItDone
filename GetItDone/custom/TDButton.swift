@@ -11,8 +11,10 @@ import UIKit
 class TDButton: UIButton {
     
     var title: String!
+    var type: ButtonOptions!
+    var radius: CGFloat!
     
-    init(title: String = "button text", frame: CGRect = .zero) {
+    init(title: String = "button text", frame: CGRect = .zero, type: ButtonOptions = .roundedText, radius: CGFloat = 20) {
         super.init(frame: .zero)
         
         if frame == .zero {
@@ -20,17 +22,40 @@ class TDButton: UIButton {
         }
         
         self.title = title
+        self.type = type
+        self.radius = radius
         self.phaseTwo()
+        
     }
     
     func phaseTwo() {
+        
         self.setTitle(self.title, for: .normal)
         self.setTitleColor(.grayZero, for: .normal)
-        self.layer.cornerRadius = 20
         self.backgroundColor = .white
         if let titleLabel = self.titleLabel {
             titleLabel.font = UIFont(name: "Raleway-Regular", size: 16)
         }
+        
+        switch self.type {
+            case .roundedText:
+                self.roundedText()
+            case .squareIcon:
+                self.squareIcon()
+            default:
+                break
+        }
+    }
+    
+    func squareIcon() {
+        // This is where we will set the custom icons
+        if let titleLabel = self.titleLabel {
+            titleLabel.font = UIFont(name: "Raleway-Regular", size: 24)
+        }
+    }
+    
+    func roundedText() {
+        self.layer.cornerRadius = self.radius
     }
     
     required init?(coder: NSCoder) {

@@ -23,7 +23,9 @@ class TDGradient: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        if frame == .zero {
+            translatesAutoresizingMaskIntoConstraints = false
+        }
         
         if let layer = self.layer as? CAGradientLayer {
             layer.colors = self.hexColors

@@ -24,7 +24,7 @@ class WelcomeController: UIViewController {
         return label
     }()
     
-    let nextButton = TDButton(title: "START WINNING")
+    let nextButton = TDButton(title: "START WINNING", type: .roundedText)
     
     let copyrightLabel = TDLabel(title: "© 2020 | Saurabh Mirajkar", color: .grayOne, size: 14, textAlign: .center)
     
