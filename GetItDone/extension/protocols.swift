@@ -9,5 +9,9 @@
 import Foundation
 
 protocol TDHeaderViewDelegate {
-    func addItem()
+    func openAddItemPopUp()
+}
+
+protocol TDNewItemDelegate {
+    func addItemToList(text: String)
 }
