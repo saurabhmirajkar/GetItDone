@@ -24,6 +24,10 @@
 		095339892476E759000C7129 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095339882476E759000C7129 /* protocols.swift */; };
 		09613FEA2482A0E700DC56E6 /* TDNewItemPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09613FE92482A0E700DC56E6 /* TDNewItemPopUp.swift */; };
 		09613FEC2482AAB400DC56E6 /* TDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09613FEB2482AAB400DC56E6 /* TDTextField.swift */; };
+		09BCEECD248529BD00669274 /* TDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCEECC248529BD00669274 /* TDTableView.swift */; };
+		09BCEECF248532E900669274 /* TDListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCEECE248532E900669274 /* TDListCell.swift */; };
+		09EE3A162489457900026859 /* toDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE3A152489457900026859 /* toDo.swift */; };
+		09FAB7C4249E4C6100D5C747 /* TDCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAB7C3249E4C6100D5C747 /* TDCheckbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		095339882476E759000C7129 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
 		09613FE92482A0E700DC56E6 /* TDNewItemPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDNewItemPopUp.swift; sourceTree = "<group>"; };
 		09613FEB2482AAB400DC56E6 /* TDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTextField.swift; sourceTree = "<group>"; };
+		09BCEECC248529BD00669274 /* TDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTableView.swift; sourceTree = "<group>"; };
+		09BCEECE248532E900669274 /* TDListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDListCell.swift; sourceTree = "<group>"; };
+		09EE3A152489457900026859 /* toDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDo.swift; sourceTree = "<group>"; };
+		09FAB7C3249E4C6100D5C747 /* TDCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCheckbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,9 @@
 				095339832476D275000C7129 /* TDHeaderView.swift */,
 				09613FE92482A0E700DC56E6 /* TDNewItemPopUp.swift */,
 				09613FEB2482AAB400DC56E6 /* TDTextField.swift */,
+				09BCEECC248529BD00669274 /* TDTableView.swift */,
+				09BCEECE248532E900669274 /* TDListCell.swift */,
+				09FAB7C3249E4C6100D5C747 /* TDCheckbox.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -110,6 +121,7 @@
 		094FE1DB221F04E10026EFAE /* GetItDone */ = {
 			isa = PBXGroup;
 			children = (
+				09EE3A142489453E00026859 /* modals */,
 				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
 				094710D2247404200014FC73 /* fonts */,
 				094710CF2473FD230014FC73 /* extension */,
@@ -130,6 +142,14 @@
 				094710D924742EAF0014FC73 /* ListController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		09EE3A142489453E00026859 /* modals */ = {
+			isa = PBXGroup;
+			children = (
+				09EE3A152489457900026859 /* toDo.swift */,
+			);
+			path = modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,19 +225,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BCEECF248532E900669274 /* TDListCell.swift in Sources */,
 				09613FEC2482AAB400DC56E6 /* TDTextField.swift in Sources */,
 				094710D8247424DB0014FC73 /* TDButton.swift in Sources */,
 				094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */,
 				09613FEA2482A0E700DC56E6 /* TDNewItemPopUp.swift in Sources */,
 				090A04062472BB6000BB0954 /* TDGradient.swift in Sources */,
+				09BCEECD248529BD00669274 /* TDTableView.swift in Sources */,
 				094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */,
 				095339842476D275000C7129 /* TDHeaderView.swift in Sources */,
 				095339892476E759000C7129 /* protocols.swift in Sources */,
 				090A04082472BE7F00BB0954 /* extensions.swift in Sources */,
+				09EE3A162489457900026859 /* toDo.swift in Sources */,
 				094710D12473FD3F0014FC73 /* TDLabel.swift in Sources */,
 				094FE1DD221F04E10026EFAE /* AppDelegate.swift in Sources */,
 				094710DA24742EAF0014FC73 /* ListController.swift in Sources */,
 				095339872476DAA5000C7129 /* enums.swift in Sources */,
+				09FAB7C4249E4C6100D5C747 /* TDCheckbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

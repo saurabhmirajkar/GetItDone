@@ -15,3 +15,7 @@ protocol TDHeaderViewDelegate {
 protocol TDNewItemDelegate {
     func addItemToList(text: String)
 }
+
+protocol TDListCellDelegate {
+    func toggleToDo(id: Int,status: Bool)
+}

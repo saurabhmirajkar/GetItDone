@@ -29,9 +29,6 @@ class TDButton: UIButton {
     }
     
     func phaseTwo() {
-        
-        self.setTitle(self.title, for: .normal)
-        self.setTitleColor(.grayZero, for: .normal)
         self.backgroundColor = .white
         if let titleLabel = self.titleLabel {
             titleLabel.font = UIFont(name: "Raleway-Regular", size: 16)
@@ -48,14 +45,13 @@ class TDButton: UIButton {
     }
     
     func squareIcon() {
-        // This is where we will set the custom icons
-        if let titleLabel = self.titleLabel {
-            titleLabel.font = UIFont(name: "Raleway-Regular", size: 24)
-        }
+        self.setImage(UIImage(named: "add-icon"), for: .normal)
     }
     
     func roundedText() {
         self.layer.cornerRadius = self.radius
+        self.setTitle(self.title, for: .normal)
+        self.setTitleColor(.grayZero, for: .normal)
     }
     
     required init?(coder: NSCoder) {

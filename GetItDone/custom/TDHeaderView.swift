@@ -13,7 +13,7 @@ class TDHeaderView: UIView {
     let bg = TDGradient()
     let titleLabel = TDLabel(size: 14)
     let subTitleLabel = TDLabel(size: 24)
-    let addButton = TDButton(title: "+", type: .squareIcon)
+    let addButton = TDButton(type: .squareIcon)
     var delegate: TDHeaderViewDelegate?
     
     init(frame: CGRect = .zero, title: String = "header title", subTitle: String = "header subtitle") {
@@ -37,17 +37,17 @@ class TDHeaderView: UIView {
         
         addSubview(titleLabel)
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 12).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 8).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 16).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         addSubview(subTitleLabel)
         subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-        subTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 8).isActive = true
+        subTitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20 + 16).isActive = true
         subTitleLabel.rightAnchor.constraint(equalTo: centerXAnchor, constant: 50).isActive = true
         
         addSubview(addButton)
         addButton.bottomAnchor.constraint(equalTo: subTitleLabel.bottomAnchor).isActive = true
-        addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20 - 8).isActive = true
+        addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20 - 16 - 14).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor, multiplier: 1).isActive = true
         
