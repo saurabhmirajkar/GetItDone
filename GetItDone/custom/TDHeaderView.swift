@@ -28,6 +28,12 @@ class TDHeaderView: UIView {
         setupLayout()
     }
     
+    var itemsLeft : Int = 0 {
+        didSet {
+            self.subTitleLabel.text = "\(itemsLeft) left"
+        }
+    }
+    
     func setupLayout() {
         addSubview(bg)
         bg.leftAnchor.constraint(equalTo: leftAnchor).isActive = true

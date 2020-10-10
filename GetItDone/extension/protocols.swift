@@ -17,5 +17,5 @@ protocol TDNewItemDelegate {
 }
 
 protocol TDListCellDelegate {
-    func toggleToDo(id: Int,status: Bool)
+    func toggleToDo()
 }

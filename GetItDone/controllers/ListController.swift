@@ -11,17 +11,40 @@ import UIKit
 class ListController: UIViewController, TDHeaderViewDelegate, TDNewItemDelegate {
     
     func openAddItemPopUp() {
-        print("trying to open add item popup view")
+        popUp.animatePopUp()
+    }
+    
+    func notInList(text: String) -> Bool {
+        var isNotInList = true
+        self.listData.forEach { toDo in
+            if toDo.title == text {
+                isNotInList = false
+            }
+        }
+        return isNotInList
     }
     
     func addItemToList(text: String) {
-        print("text in textfield is: \(text)")
+        if !self.notInList(text: text) {
+//            let newItem = ToDo(id: self.listData.count, title: text, status: false)
+//            self.listData.append(newItem)
+            CoreDataManager.shared.createToDo(id: Double(self.listData.count), title: text, status: false)
+            self.listData = CoreDataManager.shared.fetchToDos()
+            self.listTable.reloadData()
+            updateHeaderItemsLeft()
+            self.popUp.textfield.text = ""
+            self.popUp.animatePopUp()
+        } else {
+            print("Item already present!")
+        }
+        
     }
     
     let header = TDHeaderView(title: "Stuff to get done", subTitle: "10 left")
     let popUp = TDNewItemPopUp()
     
     let tbInset: CGFloat = 16
+    var bgBottom: NSLayoutConstraint!
    
     lazy var bg: UIView = {
        let view = TDGradient()
@@ -49,11 +72,9 @@ class ListController: UIViewController, TDHeaderViewDelegate, TDNewItemDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listData = [
-            ToDo(id: 0, title: "first item", status: false),
-            ToDo(id: 1, title: "hey doodh", status: true),
-            ToDo(id: 2, title: "let it rip!", status: true)
-        ]
+        listData = CoreDataManager.shared.fetchToDos()
+        
+        self.updateHeaderItemsLeft()
         
         view.backgroundColor = .white
         
@@ -67,7 +88,8 @@ class ListController: UIViewController, TDHeaderViewDelegate, TDNewItemDelegate 
         bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         bg.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 20).isActive = true
         bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+        bgBottom = bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+        bgBottom.isActive = true
         
         view.addSubview(listTable)
         listTable.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: tbInset).isActive = true
@@ -80,6 +102,8 @@ class ListController: UIViewController, TDHeaderViewDelegate, TDNewItemDelegate 
         popUp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         popUp.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         popUp.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        self.openAddItemPopUp()
         
         header.delegate = self
         popUp.textfield.delegate = self
@@ -94,16 +118,55 @@ class ListController: UIViewController, TDHeaderViewDelegate, TDNewItemDelegate 
         return .lightContent
     }
     
+    var todoToUpdate: ToDo?
+    
 }
+
+
 
 extension ListController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        popUp.animateView(transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+        
+        var heightToAnimate = -keyboardHeight - 20
+        
+        if textField == popUp.textfield {
+            popUp.animateView(transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+            heightToAnimate -= 80
+        } else {
+            self.todoToUpdate = CoreDataManager.shared.fetchToDo(title: textField.text!)
+        }
+        
+        self.bgBottom.constant = heightToAnimate
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        popUp.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+        
+        let heightToAnimate: CGFloat = -100
+        
+        if textField == popUp.textfield {
+            popUp.animateView(transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+        } else {
+            if let toDoToUpdate = self.todoToUpdate {
+                CoreDataManager.shared.deleteToDo(id: toDoToUpdate.id)
+                CoreDataManager.shared.createToDo(id: toDoToUpdate.id, title: textField.text!, status: toDoToUpdate.status)
+            }
+        }
+        
+        self.bgBottom.constant = heightToAnimate
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
 }
@@ -150,7 +213,8 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! TDListCell
         
-        cell.box.delegate = self
+        cell.delegate = self
+        cell.textField.delegate = self
         
         var itemsForSection : [ToDo] = []
         self.listData.forEach { (toDo) in
@@ -173,19 +237,21 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
 
 extension ListController : TDListCellDelegate {
     
-    func toggleToDo(id: Int, status: Bool) {
-        
-        let newListData = self.listData.map { (toDo) -> ToDo in
-            if toDo.id == id {
-                var newToDo = toDo
-                newToDo.status = status
-                return newToDo
-            }
-            return toDo
-        }
-        
-        self.listData = newListData
+    func toggleToDo() {
+        self.listData = CoreDataManager.shared.fetchToDos()
         self.listTable.reloadData()
+        updateHeaderItemsLeft()
+    }
+    
+}
+
+extension ListController {
+    
+    func updateHeaderItemsLeft() {
+        header.itemsLeft = 0
+        _ = self.listData.map { (toDo) in
+            if !toDo.status { header.itemsLeft += 1 }
+        }
     }
     
 }

@@ -26,6 +26,7 @@
 		09613FEC2482AAB400DC56E6 /* TDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09613FEB2482AAB400DC56E6 /* TDTextField.swift */; };
 		09BCEECD248529BD00669274 /* TDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCEECC248529BD00669274 /* TDTableView.swift */; };
 		09BCEECF248532E900669274 /* TDListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCEECE248532E900669274 /* TDListCell.swift */; };
+		09E9E9992531F9EC00E015E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E9E9982531F9EC00E015E7 /* CoreDataManager.swift */; };
 		09EE3A162489457900026859 /* toDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE3A152489457900026859 /* toDo.swift */; };
 		09FAB7C4249E4C6100D5C747 /* TDCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAB7C3249E4C6100D5C747 /* TDCheckbox.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		09613FEB2482AAB400DC56E6 /* TDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTextField.swift; sourceTree = "<group>"; };
 		09BCEECC248529BD00669274 /* TDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTableView.swift; sourceTree = "<group>"; };
 		09BCEECE248532E900669274 /* TDListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDListCell.swift; sourceTree = "<group>"; };
+		09E9E9982531F9EC00E015E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		09EE3A152489457900026859 /* toDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDo.swift; sourceTree = "<group>"; };
 		09FAB7C3249E4C6100D5C747 /* TDCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCheckbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +123,7 @@
 		094FE1DB221F04E10026EFAE /* GetItDone */ = {
 			isa = PBXGroup;
 			children = (
-				09EE3A142489453E00026859 /* modals */,
+				09EE3A142489453E00026859 /* models */,
 				094FE1DC221F04E10026EFAE /* AppDelegate.swift */,
 				094710D2247404200014FC73 /* fonts */,
 				094710CF2473FD230014FC73 /* extension */,
@@ -131,6 +133,7 @@
 				094FE1E8221F04E20026EFAE /* LaunchScreen.storyboard */,
 				094FE1EB221F04E20026EFAE /* Info.plist */,
 				094FE1E3221F04E10026EFAE /* GetItDone.xcdatamodeld */,
+				09E9E9982531F9EC00E015E7 /* CoreDataManager.swift */,
 			);
 			path = GetItDone;
 			sourceTree = "<group>";
@@ -144,12 +147,12 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
-		09EE3A142489453E00026859 /* modals */ = {
+		09EE3A142489453E00026859 /* models */ = {
 			isa = PBXGroup;
 			children = (
 				09EE3A152489457900026859 /* toDo.swift */,
 			);
-			path = modals;
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Saurabh Mirajkar";
 				TargetAttributes = {
 					094FE1D8221F04E10026EFAE = {
@@ -231,6 +234,7 @@
 				094FE1DF221F04E10026EFAE /* WelcomeController.swift in Sources */,
 				09613FEA2482A0E700DC56E6 /* TDNewItemPopUp.swift in Sources */,
 				090A04062472BB6000BB0954 /* TDGradient.swift in Sources */,
+				09E9E9992531F9EC00E015E7 /* CoreDataManager.swift in Sources */,
 				09BCEECD248529BD00669274 /* TDTableView.swift in Sources */,
 				094FE1E5221F04E10026EFAE /* GetItDone.xcdatamodeld in Sources */,
 				095339842476D275000C7129 /* TDHeaderView.swift in Sources */,
@@ -285,6 +289,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -346,6 +351,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

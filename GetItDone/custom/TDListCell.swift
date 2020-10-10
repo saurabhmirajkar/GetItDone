@@ -10,6 +10,18 @@ import UIKit
 
 class TDListCell: UITableViewCell {
     
+    var delegate: TDListCellDelegate?
+    
+    @objc func toggleStatus() {
+        if let delegate = self.delegate, let toDo = self.toDo {
+//            let newToDo = ToDo(id: toDo.id, title: textField.text!, status: !toDo.status)
+//            delegate.toggleToDo(updatedToDo: newToDo)
+            CoreDataManager.shared.deleteToDo(id: toDo.id)
+            CoreDataManager.shared.createToDo(id: toDo.id, title: textField.text!, status: !toDo.status)
+            delegate.toggleToDo()
+        }
+    }
+    
 //    let titleLabel = TDLabel(color: .grayZero, size: 14)
     let textField = TDTextField(placeholder: "ToDo", radius: 0, inset: 14)
     
@@ -23,7 +35,6 @@ class TDListCell: UITableViewCell {
         didSet {
             if let toDo = toDo {
                 self.box.toggled = toDo.status
-                self.box.id = toDo.id
                 self.textField.text = toDo.title
             }
         }
@@ -37,6 +48,7 @@ class TDListCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
         
+        box.addTarget(self, action: #selector(self.toggleStatus), for: .touchUpInside)
         
         view.backgroundColor = .white
         
